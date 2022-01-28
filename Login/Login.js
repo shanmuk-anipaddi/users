@@ -20,7 +20,6 @@ const emailReducer = (state, action) => {
 };
 
 const passwordReducer = (state, action) => {
-  //console.log(state);
   switch (action.type) {
     case "INPUT_PASSWORD":
       return {
@@ -108,11 +107,9 @@ const Login = (props) => {
   };
   const submitHandler = (event) => {
     event.preventDefault();
-    // console.log(enteredEmail);
-    //console.log(enteredPassword);
+    
     props.onLogin(emailState.value, passwordState.value);
   };
-
   const validatePasswordhandler = () => {
     //setPasswordIsValid(passwordState.value.length > 6);
     dispatchPassword({ type: "INPUT_PWD_BLUR" });
